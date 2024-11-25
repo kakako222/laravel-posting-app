@@ -17,7 +17,7 @@ use App\Http\Controllers\PostController;
 
 Route::get('/', [PostController::class, 'index'])->middleware(['auth', 'verified'])->name('posts.index');
 
- /*
+/*
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -29,7 +29,7 @@ Route::middleware('auth')->group(function () {
 });
  */
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 /*
  Route::get('/posts', [PostController::class, 'index'])->middleware(['auth', 'verified'])->name('home');
@@ -46,4 +46,4 @@ require __DIR__.'/auth.php';
  Route::delete('/posts/{post}', [PostController::class, 'destroy'])->middleware(['auth', 'verified'])->name('posts.destroy');
  */
 
- Route::resource('posts', PostController::class)->middleware(['auth', 'verified']);
+Route::resource('posts', PostController::class)->middleware(['auth', 'verified']);
